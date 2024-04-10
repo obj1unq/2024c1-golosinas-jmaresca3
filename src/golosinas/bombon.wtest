@@ -26,3 +26,57 @@ describe "test de bombon" {
 	}
 	
 }
+
+describe "test de alfajor" {
+
+	test "peso inicial" {
+		assert.equals(300, alfajor.peso())
+	}
+	
+	test "precio" {
+		assert.equals(12, alfajor.precio())
+	}
+	
+	test "mordiscos" {
+		alfajor.mordisco()
+		assert.equals(240, alfajor.peso())
+		alfajor.mordisco()
+		assert.equals(192, alfajor.peso())
+	}
+	
+	test "gusto" {
+		assert.equals("chocolate", alfajor.gusto())
+	}
+	
+	test "libre de gluten" {
+		assert.notThat(alfajor.libreGluten())	
+	}
+	
+}
+
+describe "test de caramelo" {
+
+	test "peso inicial" {
+		assert.equals(5, caramelo.peso())
+	}
+	
+	test "precio" {
+		assert.equals(1, caramelo.precio())
+	}
+	
+	test "mordiscos" {
+		caramelo.mordisco()
+		assert.equals(4, caramelo.peso())
+		caramelo.mordisco()
+		assert.equals(3, caramelo.peso())
+	}
+	
+	test "gusto" {
+		assert.equals("frutilla", caramelo.gusto())
+	}
+	
+	test "libre de gluten" {
+		assert.that(caramelo.libreGluten())	
+	}
+	
+}
